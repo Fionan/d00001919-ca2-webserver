@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Upload Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Add Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function validateForm() {
+            var companyName = document.getElementById("companyname").value;
+            var description = document.getElementById("description").value;
+            var fileInput = document.getElementById("file");
+
+            if (companyName === "" || description === "" || fileInput.files.length === 0) {
+                alert("Please fill in all fields and select a file.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function handleFileSelect(event) {
+            event.preventDefault();
+            
+          //  var dragDropArea = document.getElementById("drag-drop-area");
+            var fileInput = document.getElementById("file");
+            var fileSelectedMessage = document.getElementById("file-selected-message");
+
+        //    dragDropArea.classList.add("file-selected");
+            fileSelectedMessage.style.display = "block";
+            fileSelectedMessage.innerHTML = "File selected: " + fileInput.files[0].name;
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+            var dragDropArea = document.getElementById("drag-drop-area");
+            dragDropArea.classList.add("drag-over");
+        }
+
+        function handleDragLeave(event) {
+            event.preventDefault();
+            var dragDropArea = document.getElementById("drag-drop-area");
+            dragDropArea.classList.remove("drag-over");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-cloud-upload-alt"></i> S3 Upload Form</h1>
+        <form action="upload.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class="form-row">
+                <label for="companyname"><i class="fas fa-building"></i> Company Name:</label>
+                <input type="text" name="companyname" id="companyname" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="description"><i class="fas fa-info-circle"></i> Description:</label>
+                <input type="text" name="description" id="description" required>
+            </div>
+            
+            <div class="input-container form-row center-content">
+                <label for="file" class="custom-file-input">
+                    <i class="fas fa-download"></i> Choose a file or drag and drop file here
+                    <input type="file" name="file" id="file" class="hidden" required
+                           onchange="handleFileSelect(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                </label>
+            </div>
+            
+            <div id="file-selected-message" class="file-selected-message center-content"></div>
+            
+            <button type="submit" class="upload-button center-content"><i class="fas fa-upload"></i> Upload </button>
+        </form>
+    </div>
+</body>
+</html>
