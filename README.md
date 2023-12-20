@@ -6,11 +6,8 @@ Brief project description goes here.
 
 - [Introduction](#introduction)
 - [Requirements](#requirements)
-  - [Installing Dependencies](#installing-dependencies)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
@@ -31,18 +28,13 @@ Ensure that you have the following software and dependencies installed before se
 - Composer
 
 
-### Installing Dependencies
+### Installation 
 
 To install the required packages on a Debian-based system, you can use the following commands:
 
 ```bash
-sudo apt update
-sudo apt upgrade -y
-sudo apt install php libapache2-mod-php git awscli composer php-xml python-is-python3
+wget https://raw.githubusercontent.com/Fionan/d00001919-ca2-webserver/main/setup.sh
+chmod +x setup.sh
+./setup.sh
 
-
-## Installation
-
-rm -R /var/www/html
-git clone <this repository> /var/www/html
 
