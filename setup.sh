@@ -9,7 +9,7 @@ sudo apt install php libapache2-mod-php git awscli composer php-xml python-is-py
 sudo rm -rf /var/www/html/*
 
 # Clone the GitHub repository into /var/www/html
-sudo git clone https://github.com/your-username/your-repo.git /var/www/html
+sudo git clone https://github.com/Fionan/d00001919-ca2-webserver.git /var/www/html
 
 # Install boto3 using pip we will need this for the service later
 sudo pip install boto3
