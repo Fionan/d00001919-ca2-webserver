@@ -38,7 +38,7 @@ To install the required packages on a Debian-based system, you can use the follo
 ```bash
 sudo apt update
 sudo apt upgrade -y
-sudo apt install php libapache2-mod-php git awscli composer php-xml
+sudo apt install php libapache2-mod-php git awscli composer php-xml python-is-python3
 
 
 ## Installation
