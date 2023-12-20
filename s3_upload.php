@@ -8,26 +8,25 @@ require 'vendor/autoload.php';
 
 // AWS credentials and configuration
 
-if(file_exists('.env')){
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
-}
+//if(file_exists('.env')){
+//    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+//    $dotenv->load();
+//}
 
 
 
-$aws_access_key = $_ENV['AWS_ACCESS_KEY'];
-$aws_secret_key = $_ENV['AWS_SECRET_KEY'];
-$bucket_name = $_ENV['AWS_BUCKET_NAME'];
-$region = $_ENV['AWS_REGION'];
+//$aws_access_key = $_ENV['AWS_ACCESS_KEY'];
+//$aws_secret_key = $_ENV['AWS_SECRET_KEY'];
+//$bucket_name = $_ENV['AWS_BUCKET_NAME'];
+//$region = $_ENV['AWS_REGION'];
+
+$bucket_name = "d00001919-testbucket";
+$region = "eu-west-1";
 
 // Instantiate an S3 client
 $s3Client = new S3Client([
     'version' => 'latest',
     'region' => $region,
-    'credentials' => [
-        'key'    => $aws_access_key,
-        'secret' => $aws_secret_key,
-    ],
 ]);
 
 // Generate a pre-signed URL for a PUT operation
