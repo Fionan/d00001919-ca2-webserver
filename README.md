@@ -1,4 +1,4 @@
-# Project Name
+# Video ffmpeg reduce/rename via AWS cloud
 
 Brief project description goes here.
 
@@ -14,7 +14,11 @@ Brief project description goes here.
 
 ## Introduction
 
-Provide a short introduction or overview of your project.
+This is the repository for code used for my CA2 project for Cloud Technologies DKIT.
+This repository contains scripts and code required to allow the user to upload to an S3 bucket via EC2 webserver.
+
+TO-DO
+We will later add a system damon to monitor a SQS queue and remove processed videos from our S3 bucket.
 
 ## Requirements
 
@@ -22,11 +26,10 @@ Ensure that you have the following software and dependencies installed before se
 
 - PHP
 - Apache2 with PHP module
-- PHP MySQL extension
 - Git
 - AWS CLI
 - Composer
-- MySQL Server
+
 
 ### Installing Dependencies
 
@@ -34,4 +37,12 @@ To install the required packages on a Debian-based system, you can use the follo
 
 ```bash
 sudo apt update
-sudo apt install php libapache2-mod-php php-mysql git awscli composer mysql-server
+sudo apt upgrade -y
+sudo apt install php libapache2-mod-php git awscli composer php-xml
+
+
+## Installation
+
+rm -R /var/www/html
+git clone <this repository> /var/www/html
+
