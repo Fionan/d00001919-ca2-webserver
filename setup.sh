@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# First do basic dependancies
+sudo apt update
+sudo apt upgrade -y
+sudo apt install php libapache2-mod-php git awscli composer php-xml python-is-python3
+# clean our HTML folder
 sudo rm -rf /var/www/html/*
 # Clone the GitHub repository into /var/www/html
 sudo git clone https://github.com/your-username/your-repo.git /var/www/html
