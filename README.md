@@ -1,6 +1,8 @@
 # Video ffmpeg reduce/rename via AWS cloud
 
-Brief project description goes here.
+The project allows a user to upload to a video to an S3 Bucket via an EC2 Apache webserver.
+It is designed to work on low powered EC2 instance.
+
 
 ## Table of Contents
 
