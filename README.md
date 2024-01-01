@@ -14,8 +14,7 @@ Brief project description goes here.
 This is the repository for code used for my CA2 project for Cloud Technologies DKIT.
 This repository contains scripts and code required to allow the user to upload to an S3 bucket via EC2 webserver.
 
-TO-DO
-We will later add a system damon to monitor a SQS queue and remove processed videos from our S3 bucket.
+The install script, should be run on an EC2 instance in AWS cloud. It will clone this repo and install the SQS deletion service.
 
 ## Requirements
 
